@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- $width := 1649 }}
+{{- $height := 256 }}
+<article class="bg-white text-gray-400 flex flex-col items-center mb-10">
+  {{ if .Param "cover" }}
+    {{ with .Resources.GetMatch (printf "*%s*" .Params.cover) }}
+      {{ $img := .Fill (printf "%sx%s Center NearestNeighbor jpg" (string (mul $width 2)) (string (mul $height 2))) }}
+      {{ $imgMobile := .Fill (printf "%sx%s Center NearestNeighbor jpg" (string (mul 375 2)) (string (mul 210 2))) }}
+      <img 
+        class="object-cover object-center h-64 w-full" 
+        srcset="{{ $imgMobile.RelPermalink }} 750w,
+                {{ $img.RelPermalink }} 3298w"
+        src="{{ $img.RelPermalink }}"
+        loading="lazy"/>
+    {{ end }}
+  {{ end }}
+  <div class="flex flex-col items-center py-6 px-20">
+    <time class="uppercase font-bold text-xs tracking-widest text-gray-300">{{ .Date.Format "2 January 2006" }}</time>
+    <h2 class="uppercase font-bold text-3xl py-2"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+    <hr class="border border-t-4 border-gray-400 w-12 my-3"/>
+
+    <div class="entry-content max-w-3xl w-full text-gray-500 font-light">
+      {{ .Content }}
+    </div>
+  </div>
+
+</article>
+{{end}}

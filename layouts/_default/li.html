@@ -1,0 +1,15 @@
+<article class="text-center bg-white text-gray-400 my-3">
+  <a href="{{ .RelPermalink }} ">
+    {{ with .Resources.GetMatch (printf "*%s*" .Params.cover) }}
+    {{ $img := . }}
+    <img src="{{ $img.RelPermalink }}" loading="lazy" class="object-cover object-center h-64 w-full"/>
+    {{ end }}
+  </a>
+  <div class="flex flex-col items-center p-6">
+    <time class="uppercase font-bold text-xs tracking-widest text-gray-300">{{ .Date.Format "2 January 2006" }}</time>
+    <h2 class="uppercase font-bold text-3xl py-2"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+    <hr class="border border-t-4 border-gray-400 w-12 my-3"/>
+    <p class="py-6">{{ .Summary }}</p>
+    <a href="{{ .RelPermalink }}" class="uppercase tracking-widest text-xs font-bold">Read the post</a>
+  </div>
+</article>

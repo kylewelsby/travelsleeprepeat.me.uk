@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <section class="flex flex-col items-center mb-10">
+  {{ with .Site.GetPage "section" "posts" }}
+    {{ range .Pages.ByDate.Reverse }}
+      {{ .Render "li" }}
+    {{ end }}
+  {{ end }}
+  </section>
+{{ end }}

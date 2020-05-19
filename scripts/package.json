@@ -1,0 +1,23 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wordpress-to-hugo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kyle Welsby <kyle@mekyle.com> (https://mekyle.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "glob": "^7.1.6",
+    "gray-matter": "^4.0.2",
+    "rehype-parse": "^6.0.2",
+    "rehype-remark": "^8.0.0",
+    "remark-images-download": "^3.0.0",
+    "remark-stringify": "^8.0.0",
+    "turndown": "^6.0.0",
+    "unified": "^9.0.0"
+  }
+}

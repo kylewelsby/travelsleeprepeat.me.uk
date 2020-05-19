@@ -1,0 +1,4 @@
+/public
+node_modules
+scripts/node_modules
+/.firebase

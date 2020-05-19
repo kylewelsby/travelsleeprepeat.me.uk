@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <section class="flex flex-col items-center mb-10">
+  {{ range .Data.Pages }}
+    {{ .Render "li" }}
+  {{ end }}
+  </section>
+{{ end }}

@@ -1,0 +1,26 @@
+@tailwind base;
+
+@tailwind components;
+
+.entry-content a {
+  @apply underline;
+}
+
+.entry-content strong, 
+.entry-content b {
+  @apply font-bold;
+}
+
+.entry-content > p {
+  @apply my-6;
+}
+
+.entry-content > blockquote {
+  @apply border-l-8 border-gray-500 pl-8;
+}
+
+.entry-content > blockquote p {
+  @apply my-6;
+}
+
+@tailwind utilities;
